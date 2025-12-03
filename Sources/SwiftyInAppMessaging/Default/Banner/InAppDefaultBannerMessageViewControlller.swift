@@ -57,6 +57,7 @@
 
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
+            self.eventDetector.impressionDetected()
             self.showBanner(completion: { [weak self] completed in
                 guard let `self` = self, completed else {
                     return
@@ -133,8 +134,6 @@
                         actionText: self?.title, actionURL: self?.actionURL)
                     self?.eventDetector.messageClicked(with: action)
                 })
-
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
 

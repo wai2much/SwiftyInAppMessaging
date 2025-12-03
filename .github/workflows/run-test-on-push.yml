@@ -5,13 +5,13 @@ on: [push]
 jobs:
   build:
 
-    runs-on: macos-14
+    runs-on: macos-15
 
     env:
       TEST: 1
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Create GoogleService-Info.plist from GOOGLE_SERVICE_INFO_PLIST
         run: |
